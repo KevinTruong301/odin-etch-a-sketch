@@ -2,6 +2,10 @@ function createDiv()
 {
     let square = document.createElement('div');
     square.className = "square";
+    
+    square.addEventListener('mouseover', function(e){
+        e.target.style.background = 'black';
+    });
 
     containerDiv.appendChild(square);
 }
