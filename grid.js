@@ -44,3 +44,16 @@ let numSquares = 16;
 
 CreateGrid(); //Creates initial grid
 
+const changeButton = document.querySelector("#changeButton");
+
+changeButton.addEventListener('click', () => {
+    let num = prompt("ENTER NUMBER FOR GRID", 16);
+    if(num == null || num == "")
+    {
+        ChangeGrid(16);
+    }
+    else
+    {
+        ChangeGrid(num);
+    }
+});
