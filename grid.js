@@ -1,8 +1,10 @@
-function createDiv()
+function createDiv(containerDiv)
 {
+
     let square = document.createElement('div');
     square.className = "square";
-    let squareWidth = (containerDiv.offsetWidth * 1.0 / numSquares) - 2
+    //get div width * by 1.0 to make float Add 2 for the border
+    let squareWidth = (containerDiv.offsetWidth * 1.0 / numSquares) - 2;
 
     square.style.width = squareWidth + 'px';
     square.style.height = squareWidth + 'px';
@@ -14,10 +16,31 @@ function createDiv()
     containerDiv.appendChild(square);
 }
 
-let numSquares = 16;
-const containerDiv = document.querySelector('#container');
-
-for(let i = 0; i < numSquares*numSquares; i++)
+function CreateGrid()
 {
-    createDiv();
+    const containerDiv = document.createElement('div');
+    containerDiv.id = "container";
+
+    document.body.appendChild(containerDiv);
+
+    for(let i = 0; i < numSquares*numSquares; i++)
+    {
+        createDiv(containerDiv);
+    }
 }
+
+//Make a button that asks for the grid numbs
+function ChangeGrid(num)
+{
+    numSquares = num;
+    //clear previous grid
+    const containerDiv = document.querySelector("#container");
+    document.body.removeChild(containerDiv);
+    CreateGrid();
+}
+
+
+let numSquares = 16;
+
+CreateGrid(); //Creates initial grid
+
