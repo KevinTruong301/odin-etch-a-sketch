@@ -7,4 +7,8 @@ function createDiv()
 }
 
 const containerDiv = document.querySelector('#container');
-createDiv();
+
+for(let i = 0; i < 16*16; i++)
+{
+    createDiv();
+}
