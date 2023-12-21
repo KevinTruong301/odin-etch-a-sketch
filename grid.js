@@ -41,7 +41,7 @@ function ChangeGrid(num)
 }
 
 
-let numSquares = 60;
+let numSquares = 16;
 
 CreateGrid(); //Creates initial grid
 
